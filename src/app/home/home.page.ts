@@ -88,12 +88,13 @@ export class HomePage {
     }
     let animal = this.animals[this.currentAnimalIndex];
 
-      // instanciation de l'objet Audio
-      this.media = new Audio("/assets" + animal.file);
+    // instanciation de l'objet Audio
+    this.media = new Audio("/assets" + animal.file);
     // chargement du son
     this.media.load();
     // lecture du son
     this.media.play();
+    
   }
 
   // gestion du click du joueur
@@ -129,10 +130,18 @@ export class HomePage {
     // permutation entre les 2 positions - from et to
     let animal = this.animals[even.detail.from];
 
+    // sauvegarde de l'animal à deviner
+    let animalToGuess = this.animals[this.currentAnimalIndex];
+
     // suppression à la position de départ
     this.animals.splice(even.detail.from, 1);
     // insertion à la position d'arrivée
-    this.animals.splice(even.detail.to, 0, animal)
+    this.animals.splice(even.detail.to, 0, animal);
+
+    // redéfinir l'index de l'animal à trouver
+    this.currentAnimalIndex = this.animals.findIndex(
+      (item)=>{ return item.title == animalToGuess.title }
+    )
 
     // finalisation du réagencement 
     even.detail.complete();

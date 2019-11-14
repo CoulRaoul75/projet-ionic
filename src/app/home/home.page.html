@@ -28,8 +28,9 @@
 <ion-footer>
   <ion-toolbar>
     <ion-button expand="full" size="big" class="gros-bouton" (click)="playSound()" 
-                                                              [color]="currentAnimalIndex != null? 'danger': 'primary'">
-      <ion-icon name="play"></ion-icon>
+                                                              [color]="currentAnimalIndex != null? 'danger': 'primary'"
+                                                              >
+      <ion-icon name="play" [name]="currentAnimalIndex != null? 'pause': 'play'"></ion-icon>
     </ion-button>
   </ion-toolbar>
 </ion-footer>

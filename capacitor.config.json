@@ -1,0 +1,8 @@
+{
+  "appId": "fr.m2i.vsumyuen.animals",
+  "appName": "Animals",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
